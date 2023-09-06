@@ -1,4 +1,4 @@
-package good.day.naesigan.vo
+package good.day.naesigan.common.vo
 
 data class ResponseVo(
     val resultCode: String,

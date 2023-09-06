@@ -1,4 +1,4 @@
-package good.day.naesigan.config
+package good.day.naesigan.common.config
 
 /*
  * Copyright 2002-2019 the original author or authors.

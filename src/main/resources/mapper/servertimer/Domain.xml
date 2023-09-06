@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 <mapper namespace="good.day.naesigan.servertimer.mapper.DomainMapper">
-    <select id="getDomains" resultType="good.day.naesigan.servertimer.vo.DomainVO">
+    <select id="getDomains" resultType="good.day.naesigan.servertimer.vo.DomainVo">
         select *
         from domain
     </select>
 
-    <insert id="setDomain" parameterType="good.day.naesigan.servertimer.vo.DomainVO">
+    <insert id="setDomain" parameterType="good.day.naesigan.servertimer.vo.DomainVo">
         INSERT INTO domain(name)
         VALUES (#{name})
 
         <selectKey keyProperty="id" resultType="Int" order="AFTER">
-            SELECT currval('domain.id')
+            SELECT currval('s.id')
         </selectKey>
     </insert>
 </mapper>
