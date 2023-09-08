@@ -10,8 +10,8 @@
         INSERT INTO domain(name)
         VALUES (#{name})
 
-        <selectKey keyProperty="id" resultType="Int" order="AFTER">
-            SELECT currval('s.id')
-        </selectKey>
+<!--        <selectKey keyProperty="id" resultType="Int" order="AFTER">-->
+<!--            SELECT currval('domain.id')-->
+<!--        </selectKey>-->
     </insert>
 </mapper>
