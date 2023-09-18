@@ -22,7 +22,6 @@ class ServertimerController(val servertimerService: ServertimerService) {
 
     @PostMapping("/domain")
     fun post(@RequestBody domain: DomainVo): ResponseEntity<Any> {
-        servertimerService.setDomain(domain)
         val responseVo = ResponseVo("0000", servertimerService.setDomain(domain))
         return ResponseEntity(responseVo, HttpStatus.OK)
     }

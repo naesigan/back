@@ -18,6 +18,15 @@ class ServertimerService(private val domainMapper: DomainMapper, val db: JdbcTem
         return result
     }
     fun setDomain(domain: DomainVo): Int {
+        val domains = domainMapper.getDomains()
+
+        for(data in domains) {
+            if(data.name.equals(domain.name)) {
+                println(data)
+                throw CustomException("1000")
+            }
+        }
+
         val result = domainMapper.setDomain(domain)
         return result
     }

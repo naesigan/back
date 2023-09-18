@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice
 class CustomControllerAdvice {
     @ExceptionHandler(value = [CustomException::class])
     fun handleException(ex:CustomException): ResponseEntity<ResponseVo> {
-        return ResponseEntity(ResponseVo(ex.getResultCode(), null), HttpStatus.FORBIDDEN);
+        return ResponseEntity(ResponseVo(ex.getResultCode(), null), HttpStatus.NOT_FOUND);
     }
 }
