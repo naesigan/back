@@ -7,4 +7,5 @@ data class DomainVo(
     val name: String,
     val date: Timestamp?,
     val deleted: Timestamp?,
+    val count: Int,
 )
