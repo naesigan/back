@@ -10,8 +10,14 @@
         INSERT INTO domain(name)
         VALUES (#{name})
 
-<!--        <selectKey keyProperty="id" resultType="Int" order="AFTER">-->
-<!--            SELECT currval('domain.id')-->
-<!--        </selectKey>-->
     </insert>
+
+    <insert id="setDomainLog" parameterType="good.day.naesigan.servertimer.vo.DomainVo">
+        INSERT INTO domain_log(name)
+        VALUES (#{name})
+    </insert>
+
+    <update id="updateDomain" parameterType="good.day.naesigan.servertimer.vo.DomainVo">
+        UPDATE domain SET count = count+1 where name=(#{name})
+    </update>
 </mapper>

@@ -7,4 +7,6 @@ import org.apache.ibatis.annotations.Mapper
 interface DomainMapper {
     fun getDomains(): List<DomainVo>
     fun setDomain(domainVO: DomainVo): Int
+    fun setDomainLog(domainVO: DomainVo): Int
+    fun updateDomain(name: String): Int
 }

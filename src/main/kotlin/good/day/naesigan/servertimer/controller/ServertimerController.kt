@@ -15,14 +15,20 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/servertimer")
 class ServertimerController(val servertimerService: ServertimerService) {
     @GetMapping("/domain")
-    fun index(): ResponseEntity<ResponseVo> {
+    fun getDomains(): ResponseEntity<ResponseVo> {
         val responseVo = ResponseVo("0000", servertimerService.getDomains())
         return ResponseEntity(responseVo, HttpStatus.OK)
     }
 
     @PostMapping("/domain")
-    fun post(@RequestBody domain: DomainVo): ResponseEntity<Any> {
+    fun postDomain(@RequestBody domain: DomainVo): ResponseEntity<Any> {
         val responseVo = ResponseVo("0000", servertimerService.setDomain(domain))
+        return ResponseEntity(responseVo, HttpStatus.OK)
+    }
+
+    @PostMapping("/domain/log")
+    fun postLog(@RequestBody domain: DomainVo): ResponseEntity<Any> {
+        val responseVo = ResponseVo("0000", servertimerService.setDomainLog(domain))
         return ResponseEntity(responseVo, HttpStatus.OK)
     }
 }
